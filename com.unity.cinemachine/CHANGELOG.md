@@ -54,6 +54,37 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Bugfix: Cinemachine assigns a default input controller delegate that returns 0 when the legacy input system is disabled.
 - Cinemachine example scenes show informative text when used with Input System instead of throwing error messages.
 - Regression fix: compilation errors when physics module is not present.
+
+## [2.8.9] - 2022-08-24
+- Bugfix: Freelook had wrong heading at first frame, which could cause a slight jitter. 
+- Bugfix: CinemachineConfiner was not confining correctly when Confine Screen Edges was enabled and the camera was rotated.
+- Bugfix: Fixed spurious Z rotations during blend.
+- Bugfix: Blending speed was not set correctly, when blending back and forth between the same cameras.
+- Regression fix: POV is relative to its parent transform.
+- Bugfix: AxisState.Recentering.RecenterNow() did not work reliably.
+- Bugfix: SensorSize is not saved when not using physical camera.
+- Bugfix: No redundant RepaintAllViews calls.
+- Bugfix: SaveDuringPlay works with ILists now.
+- Clipper library dependency is no longer conflicting with users.
+- AimingRig sample is only optionally dependent on UnityEngine.UI.
+- Dependency on com.unity.test-framework added.
+
+
+## [2.8.6] - 2022-05-03
+- Bugfix: A memory leak no longer occurs with PostProcessing if no PP layer is present on the camera.
+- Bugfix: Cinemachine no longer produces a compiler error in Unity Editor versions older than 2020 when an Input System package is installed.
+- Bugfix: Standalone profiler no longer crashes with CM.
+- Bugfix: EmbeddedAssetProperties were not displayed correctly in the editor.
+- Timeline guards added to scripts that rely on it.
+- Bugfix: CinemachineInputProvider now correctly tracks enabled state of input action
+- Regression fix: Axis input was ignoring CM's IgnoreTimeScale setting.
+- Bugfix: POV orientation was incorrect with World Up override
+- Added AutoEnable option to CinemachineInputHandler
+- Bugfix: 3rdPersonFollow shows a warning message when no follow target is assigned like the rest of the body components.
+- Bugfix: FadeOut sample scene shader was culling some objects incorrectly.
+
+
+## [2.8.4] - 2021-12-10
 - Regression fix: virtual cameras no longer forget that they are targeting groups on domain reload.
 - Bugfix: 3rdPersonFollow logged console messages when looking straight up or down.
 - BugFix: InputProvider no longer causes a tiny gc alloc every frame.
@@ -62,6 +93,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Samples no longer throw errors with HDRP and URP. 3rdPersonWithAimMode and Timeline samples no longer have invalid references.
 - Bugfix: 3rdPersonFollow shows a warning message when no follow target is assigned like the rest of the body components.
 - Added ability to directly set the active blend in CinemachineBrain.
+
+
+## [2.8.3] - 2021-11-22
+- Bugfix: Negative Near Clip Plane value is kept when camera is orthographic.
+- Removed legacy .unitypackages
+- Regression fix: could not change the projection of the main camera if a CM virtual camera is active
+- Regression fix: compilation errors when physics module is not present
+
+
+## [2.8.2] - 2021-10-19
+- Regression fix: Lookahead works again.
+- Regression fix: Remove "Hide Offset In Inspector" from inspector (transposer, orbital transposer)
+
+
+## [2.8.1] - 2021-09-24
 - Bugfix: OnTargetObjectWarped() did not work properly for 3rdPersonFollow.
 - Bugfix: POV did not properly handle overridden up.
 - Regression fix: removed GC allocs in UpdateTargetCache.
